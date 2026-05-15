@@ -560,7 +560,8 @@
             position: fixed;
             top: 0;
             right: 0;
-            height: 100vh;
+            height: 100%; /* Mejor compatibilidad móvil que 100vh */
+            height: 100dvh; /* Usa el viewport dinámico si está soportado */
             width: 100%;
             max-width: 440px;
             background: var(--blanco);
