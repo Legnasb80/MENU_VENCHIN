@@ -1456,7 +1456,7 @@
         <div class="carrito-drawer-footer">
             <div class="carrito-total">
                 <span>Total a Pagar:</span>
-                <span class="carrito-total-valor" id="carritoTotalValor">Bs. 0</span>
+                <span class="carrito-total-valor" id="carritoTotalValor">USD. 0</span>
             </div>
             <!--
         === BOTÓN DE WHATSAPP ===
@@ -1571,7 +1571,7 @@
                             <p>Tu carrito está vacío.</p>
                             <p style="font-size:0.8rem;">Explora el menú y agrega tus platillos favoritos 🥢</p>
                         </div>`;
-                    carritoTotalValor.textContent = 'Bs. 0';
+                    carritoTotalValor.textContent = 'USD. 0';
                     btnWhatsApp.disabled = true;
                     return;
                 }
@@ -1591,14 +1591,14 @@
                                  loading="lazy">
                             <div class="carrito-item-info">
                                 <p class="carrito-item-nombre">${item.nombre}</p>
-                                <p class="carrito-item-precio-unit">Bs. ${item.precio.toFixed(2)} c/u</p>
+                                <p class="carrito-item-precio-unit">USD. ${item.precio.toFixed(2)} c/u</p>
                             </div>
                             <div class="carrito-item-controles">
                                 <button class="contador-btn" onclick="disminuirCantidad(${item.id})" aria-label="Restar">−</button>
                                 <span class="contador-cantidad">${item.cantidad}</span>
                                 <button class="contador-btn" onclick="aumentarCantidad(${item.id})" aria-label="Sumar">+</button>
                             </div>
-                            <span class="carrito-item-subtotal">Bs. ${subtotal.toFixed(2)}</span>
+                            <span class="carrito-item-subtotal">USD. ${subtotal.toFixed(2)}</span>
                             <button class="btn-eliminar-item" onclick="eliminarDelCarrito(${item.id})" aria-label="Eliminar" title="Eliminar del carrito">
                                 <i class="fa-solid fa-trash-can"></i>
                             </button>
@@ -1607,7 +1607,7 @@
                 });
 
                 // Actualizar total
-                carritoTotalValor.textContent = `Bs. ${totalGeneral.toFixed(2)}`;
+                carritoTotalValor.textContent = `USD. ${totalGeneral.toFixed(2)}`;
                 btnWhatsApp.disabled = false;
             }
 
