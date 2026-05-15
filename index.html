@@ -560,8 +560,10 @@
             position: fixed;
             top: 0;
             right: 0;
-            height: 100%; /* Mejor compatibilidad móvil que 100vh */
-            height: 100dvh; /* Usa el viewport dinámico si está soportado */
+            height: 100%;
+            /* Mejor compatibilidad móvil que 100vh */
+            height: 100dvh;
+            /* Usa el viewport dinámico si está soportado */
             width: 100%;
             max-width: 440px;
             background: var(--blanco);
@@ -881,7 +883,8 @@
             }
 
             .carrito-drawer {
-                max-width: 70%;
+                max-width: 85%;
+                /* Ajustado para que sea más pequeño en móviles */
             }
 
             .carrito-flotante {
