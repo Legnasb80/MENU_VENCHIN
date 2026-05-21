@@ -1491,6 +1491,8 @@ body {
 
     /* El carrito en 7" se adapta como una burbuja flotante integrada */
     .cart-drawer {
+        top: auto !important;
+        height: auto !important;
         bottom: 6.5rem;
         right: 1.5rem;
         width: 380px;
@@ -1508,27 +1510,43 @@ body {
         top: 76px;
     }
 
-    /* El modal pasa a pantalla completa solo en dispositivos móviles pequeños */
+    /* El modal se mantiene como tarjeta flotante premium también en móvil */
     .modal-overlay {
-        padding: 0;
+        padding: 1rem;
     }
 
     .modal-card {
-        max-height: 100vh;
-        max-height: 100dvh;
-        border-radius: 0;
+        border-radius: var(--radius-lg);
+        max-height: 85vh;
+        max-height: 85dvh;
+    }
+
+    .modal-scroll-content {
+        padding: 1.25rem;
+    }
+
+    .modal-footer {
+        padding: 1rem 1.25rem;
+        gap: 0.75rem;
+    }
+
+    .btn-modal-add {
+        padding: 0.85rem 1rem;
+        font-size: 0.9rem;
     }
 
     /* El carrito se adapta como una burbuja flotante integrada en móvil */
     .cart-drawer {
+        top: auto !important;
+        height: auto !important;
         width: auto;
         left: 1rem;
         right: 1rem;
-        bottom: 6rem;
+        bottom: max(1rem, env(safe-area-inset-bottom));
         border: 1px solid rgba(212, 175, 55, 0.25);
         border-radius: var(--radius-lg);
-        max-height: 60vh;
-        max-height: 60dvh;
+        max-height: 85vh;
+        max-height: 85dvh;
     }
 
     /* Header y footer del carrito con padding ajustado para móvil */
@@ -1594,12 +1612,14 @@ body {
     }
 
     .cart-drawer {
-        bottom: max(5.5rem, calc(env(safe-area-inset-bottom) + 5rem));
+        top: auto !important;
+        height: auto !important;
+        bottom: max(1rem, env(safe-area-inset-bottom));
         left: 1rem;
         right: 1rem;
         width: auto;
-        max-height: 60vh;
-        max-height: 60dvh;
+        max-height: 85vh;
+        max-height: 85dvh;
     }
 
     /* Items del carrito más compactos en pantallas pequeñas */
