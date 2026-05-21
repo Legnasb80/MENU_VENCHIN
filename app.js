@@ -2,7 +2,7 @@
 const CONFIG = {
     whatsappNumber: '584120265275', // Reemplazar con el número real (código de país + número, sin + ni espacios)
     currency: '$',
-    storeName: 'RICE & WOK'
+    storeName: 'VENCHIN'
 };
 
 // ==================== BASE DE DATOS DE PRODUCTOS ====================
