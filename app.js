@@ -785,10 +785,12 @@ function toggleCartDrawer(open) {
         DOM.cartDrawer.classList.add('open');
         DOM.drawerOverlay.classList.add('visible');
         document.body.style.overflow = 'hidden';
+        document.body.classList.add('overflow-hidden');
     } else {
         DOM.cartDrawer.classList.remove('open');
         DOM.drawerOverlay.classList.remove('visible');
         document.body.style.overflow = '';
+        document.body.classList.remove('overflow-hidden');
     }
 }
 
