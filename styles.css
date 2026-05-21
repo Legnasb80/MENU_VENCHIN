@@ -727,9 +727,9 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     z-index: 200;
     opacity: 0;
     pointer-events: none;
@@ -743,26 +743,45 @@ body {
 
 .cart-drawer {
     position: fixed;
-    top: 0;
-    right: 0;
-    /* Usar altura dinámica del viewport para respetar la barra del navegador móvil */
-    height: 100vh;
-    height: 100dvh;
-    width: min(100vw, 480px);
-    background-color: var(--bg-secondary);
-    border-left: 1px solid var(--border-color);
+    bottom: 6.5rem;
+    right: 2rem;
+    width: min(90vw, 420px);
+    max-height: min(650px, 70dvh);
+    background: rgba(18, 18, 17, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: var(--radius-lg);
     z-index: 210;
-    transform: translateX(100%);
-    transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: var(--sombra-premium);
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: var(--sombra-premium), 0 0 35px rgba(212, 175, 55, 0.12);
     display: flex;
     flex-direction: column;
-    /* Asegurar que el contenido no se desborde */
     overflow: hidden;
 }
 
 .cart-drawer.open {
-    transform: translateX(0);
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Indicador triangular apuntando al botón de carrito */
+.cart-drawer::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 4.5rem;
+    width: 20px;
+    height: 20px;
+    background: rgba(18, 18, 17, 0.95);
+    border-right: 1px solid rgba(212, 175, 55, 0.25);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    transform: rotate(45deg);
+    z-index: -1;
 }
 
 .drawer-header {
@@ -1470,9 +1489,16 @@ body {
         padding: 1.25rem 1.5rem;
     }
 
-    /* El carrito lateral en 7" ocupa solo una fracción elegante de la pantalla */
+    /* El carrito en 7" se adapta como una burbuja flotante integrada */
     .cart-drawer {
-        max-width: 400px;
+        bottom: 6.5rem;
+        right: 1.5rem;
+        width: 380px;
+        max-height: min(600px, 70dvh);
+    }
+    
+    .cart-drawer::after {
+        right: 4rem;
     }
 }
 
@@ -1493,10 +1519,16 @@ body {
         border-radius: 0;
     }
 
-    /* El carrito ocupa todo el ancho en móviles */
+    /* El carrito se adapta como una burbuja flotante integrada en móvil */
     .cart-drawer {
-        width: 100vw;
-        border-left: none;
+        width: auto;
+        left: 1rem;
+        right: 1rem;
+        bottom: 6rem;
+        border: 1px solid rgba(212, 175, 55, 0.25);
+        border-radius: var(--radius-lg);
+        max-height: 60vh;
+        max-height: 60dvh;
     }
 
     /* Header y footer del carrito con padding ajustado para móvil */
@@ -1559,6 +1591,15 @@ body {
         bottom: max(1rem, env(safe-area-inset-bottom));
         border-radius: var(--radius-md);
         justify-content: center;
+    }
+
+    .cart-drawer {
+        bottom: max(5.5rem, calc(env(safe-area-inset-bottom) + 5rem));
+        left: 1rem;
+        right: 1rem;
+        width: auto;
+        max-height: 60vh;
+        max-height: 60dvh;
     }
 
     /* Items del carrito más compactos en pantallas pequeñas */
