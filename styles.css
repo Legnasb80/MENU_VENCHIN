@@ -1624,13 +1624,16 @@ body {
         grid-template-columns: 1fr;
     }
 
-    /* El botón flotante de carrito se expande en la parte inferior para fácil acceso con un dedo */
+    /* Botón flotante de carrito compacto en móviles */
     .cart-floating-btn {
-        right: 1rem;
+        right: auto;
         left: 1rem;
         bottom: max(1rem, env(safe-area-inset-bottom));
-        border-radius: var(--radius-md);
-        justify-content: center;
+        border-radius: var(--radius-pill);
+        padding: 0.6rem 1.1rem;
+        gap: 0.7rem;
+        font-size: 0.9rem;
+        max-width: fit-content;
     }
 
     .cart-drawer {
@@ -1640,8 +1643,8 @@ body {
         left: 1rem;
         right: 1rem;
         width: auto;
-        max-height: 85vh;
-        max-height: 85dvh;
+        max-height: 75vh;
+        max-height: 75dvh;
     }
 
     /* Items del carrito más compactos en pantallas pequeñas */
