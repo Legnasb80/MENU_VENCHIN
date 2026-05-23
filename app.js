@@ -61,7 +61,7 @@ const PRODUCTS = [
         name: 'Arroz VENCHIN con Pollo',
         desc: 'Delicioso y clásico arroz salteado al wok con trozos de pechuga de pollo marinada, cebollín fresco, huevo desmenuzado y nuestro toque de salsa de soya china especial.',
         price: 4.99,
-        img: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&h=400&fit=crop&q=80',
+        img: 'https://images.unsplash.com/photo-1779503999842-b6debf6db50b?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         customizable: true,
         options: [
             {
@@ -122,7 +122,7 @@ const PRODUCTS = [
         name: 'Combo Dúo VENCHIN',
         desc: 'Ideal para parejas. 2 Arroces VENCHIN (duo) + Refresco de 1L.',
         price: 10.00,
-        img: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop&q=80',
+        img: 'https://images.unsplash.com/photo-1779503616083-480ca440cbe4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         customizable: true,
         options: [
             {
@@ -152,7 +152,7 @@ const PRODUCTS = [
         name: 'Combo X4 VENCHIN',
         desc: 'Un plan para varios. 4 Arroces VENCHIN (Individuales).',
         price: 10.00,
-        img: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?w=600&h=400&fit=crop&q=80',
+        img: 'https://images.unsplash.com/photo-1779503972150-f7b3831701ab?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         customizable: true,
         options: [
             {
@@ -201,7 +201,7 @@ const PRODUCTS = [
         name: 'Refresco GLUP! (1 Litro)',
         desc: 'Refresco Glup de 1 Litro frio.',
         price: 1.00,
-        img: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&h=400&fit=crop&q=80',
+        img: 'https://images.unsplash.com/photo-1779502691963-1f2c502d4a0d?q=80&w=1987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         customizable: true,
         options: [
             {
@@ -941,3 +941,4 @@ function sendOrderToWhatsApp() {
     // Abrir enlace de WhatsApp en una pestaña nueva
     window.open(whatsappUrl, '_blank');
 }
+
