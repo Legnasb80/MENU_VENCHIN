@@ -1648,4 +1648,6 @@ body {
 
 /* Ocultar la pestaña de Entradas sin eliminar el código ni los datos */
 .category-tab[data-id="entradas"] {
+    display: none !important;
+}
  
