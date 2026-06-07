@@ -20,7 +20,7 @@ const PRODUCTS = [
         name: 'Arroz Chino VENCHIN',
         desc: 'Nuestra especialidad insuperable salteada al wok con jamon premium, tortilla de huevo picada y cebollín y repollo fresco, con un toque de salsa de soya especial.',
         price: 2.99,
-        img: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&h=400&fit=crop&q=80',
+        img: 'imagen/jamon.jpeg',
         customizable: true,
         options: [
             {
