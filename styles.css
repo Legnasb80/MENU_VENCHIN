@@ -1543,6 +1543,23 @@ body {
         font-size: 0.9rem;
     }
 
+    /* Centrar el carrito en móvil */
+    .cajon-carrito {
+        right: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) scale(0.9) translateY(20px) !important;
+        width: min(calc(100vw - 2rem), 420px) !important;
+    }
+
+    .cajon-carrito.abierto {
+        transform: translateX(-50%) scale(1) translateY(0) !important;
+    }
+
+    /* Ocultar la flecha triangular en móvil (ya no apunta al botón) */
+    .cajon-carrito::after {
+        display: none;
+    }
+
     /* Header y footer del carrito con padding ajustado para móvil */
     .cabecera-cajon {
         padding: 1rem 1.25rem;
