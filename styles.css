@@ -720,10 +720,15 @@ body {
 
 .cajon-carrito {
     position: fixed;
-    bottom: 6.5rem;
-    right: 2rem;
-    width: min(60vw, 420px);
-    max-height: min(300px, 70dvh);
+    /* Ubicación inferior dinámica: suficiente para el botón en escritorio, margen seguro en móvil */
+    bottom: clamp(1rem, 5vh, 6.5rem);
+    /* Margen derecho dinámico: 2rem en escritorio, 1rem en móviles para centrado perfecto */
+    right: clamp(1rem, 2vw, 2rem);
+    /* Ancho automático inteligente: 420px en pantallas grandes, ancho completo con márgenes en pequeñas */
+    width: min(calc(100vw - 2rem), 420px);
+    /* Alto automático adaptativo: crece según el contenido pero no excede el 85% de la pantalla */
+    height: auto;
+    max-height: min(85vh, 85dvh);
     background: rgba(18, 18, 17, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -1467,16 +1472,6 @@ body {
         padding: 1.25rem 1.5rem;
     }
 
-    /* El carrito en 7" se adapta como una burbuja flotante integrada */
-    .cajon-carrito {
-        top: auto !important;
-        height: auto !important;
-        bottom: 6.5rem;
-        right: 1.5rem;
-        width: 380px;
-        max-height: min(600px, 70dvh);
-    }
-
     .cajon-carrito::after {
         right: 4rem;
     }
@@ -1548,26 +1543,6 @@ body {
         font-size: 0.9rem;
     }
 
-    /* El carrito se adapta como una burbuja flotante integrada en móvil */
-    .cajon-carrito {
-        top: 0 !important;
-        bottom: 0 !important;
-        right: 0 !important;
-        left: auto !important;
-        width: 85% !important;
-        max-width: 360px !important;
-        height: 100% !important;
-        max-height: 100dvh !important;
-        border-radius: var(--radius-lg) 0 0 var(--radius-lg);
-        border: none;
-        border-left: 1px solid rgba(212, 175, 55, 0.25);
-        transform: translateX(100%) !important;
-    }
-
-    .cajon-carrito.abierto {
-        transform: translateX(0) !important;
-    }
-
     /* Header y footer del carrito con padding ajustado para móvil */
     .cabecera-cajon {
         padding: 1rem 1.25rem;
@@ -1631,19 +1606,6 @@ body {
         gap: 0.7rem;
         font-size: 0.9rem;
         max-width: fit-content;
-    }
-
-    .cajon-carrito {
-        top: 0 !important;
-        bottom: 0 !important;
-        right: 0 !important;
-        left: auto !important;
-        width: 85% !important;
-        height: 100% !important;
-        max-height: 100dvh !important;
-        border-radius: var(--radius-lg) 0 0 var(--radius-lg);
-        border: none;
-        border-left: 1px solid rgba(212, 175, 55, 0.25);
     }
 
     .superposicion-modal {
