@@ -947,6 +947,7 @@ function sendOrderToWhatsApp() {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${CONFIG.whatsappNumber}&text=${encodedMessage}`;
 
-    const newWindow = window.abierto(whatsappUrl, '_blank', 'noopener,noreferrer');
-    if (newWindow) newWindow.abiertoer = null;
+    const newWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    if (newWindow) newWindow.opener = null;
 }
+
