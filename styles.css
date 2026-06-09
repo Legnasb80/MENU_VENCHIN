@@ -1547,7 +1547,7 @@ body {
     /* Centrar el carrito en móvil */
     .cajon-carrito {
         right: auto !important;
-        left: 20% !important;
+        left: 40% !important;
         transform: translateX(-50%) scale(0.9) translateY(20px) !important;
         width: 90vw !important;
         max-width: 380px !important;
