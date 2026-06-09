@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <title> VENCHIN | Menú Interactivo Premium</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Descubre la experiencia premium de VENCHIN. Menú interactivo de arroz chino al wok, personalizado a tu gusto y ordenado directamente por WhatsApp.">
+    <meta name="keywords" content="arroz chino, arroz frito, comida china, menu interactivo, chaufa, delivery">
+
+    <!-- Google Fonts: Outfit (headings) & Plus Jakarta Sans (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for sleek modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Link to local stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Ambient glowing backgrounds (Aesthetic glow effects) -->
+    <div class="brillo-ambiental brillo-1"></div>
+    <div class="brillo-ambiental brillo-2"></div>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="cabecera" id="cabeceraPrincipal">
+        <div class="contenido-cabecera">
+            <div class="area-logo">
+                <div class="icono-logo">
+                    <img src="https://i.ibb.co/XxNYFgqC/logo.png" alt="VENCHIN Logo" class="img-logo">
+                </div>
+                <div class="texto-logo">
+                    <h1 class="nombre-marca"> <span>VENCHIN</span></h1>
+                    <span class="sub-marca">!SABOR QUE UNE!</span>
+                </div>
+            </div>
+            <div class="insignias-cabecera" id="insigniasCabecera">
+                <!-- Se renderiza dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO / WELCOME ==================== -->
+    <section class="seccion-heroe">
+        <div class="contenido-heroe">
+            <h2>Sabor Criollo Oriental</h2>
+            <p>Arroz salteado a fuego alto con ingredientes frescos y salsas artesanales. Diseña tu combinación perfecta
+                en nuestro menú interactivo.</p>
+        </div>
+    </section>
+
+    <!-- ==================== CATEGORIES NAV ==================== -->
+    <nav class="contenedor-categorias" aria-label="Categorías de menú">
+        <div class="desplazador-categorias" id="navCategorias">
+            <!-- Rendered dynamically by JS -->
+        </div>
+    </nav>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="contenido-principal" id="contenedorPrincipal">
+        <!-- Dynamic products grid will be rendered here -->
+        <div class="contenedor-cuadricula-productos" id="cuadriculaProductos">
+            <!-- JS dynamic content goes here -->
+        </div>
+    </main>
+
+    <!-- ==================== FLOATING CART BUTTON ==================== -->
+    <button class="btn-flotante-carrito" id="botonFlotanteCarrito" onclick="toggleCartDrawer(true)"
+        aria-label="Ver carrito">
+        <div class="contenedor-icono-carrito">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="contador-carrito vacio" id="insigniaCarrito">0</span>
+        </div>
+        <div class="info-flotante-carrito">
+            <span class="etiqueta-carrito">Tu Pedido</span>
+            <span class="vista-previa-total-carrito" id="vistaPreviaTotalCarrito">$0.00</span>
+        </div>
+    </button>
+
+    <!-- ==================== CART DRAWER ==================== -->
+    <div class="superposicion" id="superposicionCajon" onclick="toggleCartDrawer(false)"></div>
+    <aside class="cajon-carrito" id="cajonCarrito" aria-labelledby="tituloCajon">
+        <div class="cabecera-cajon">
+            <h2 id="tituloCajon"><i class="fa-solid fa-basket-shopping texto-dorado"></i> Tu Pedido</h2>
+            <button class="btn-cerrar-cajon" onclick="toggleCartDrawer(false)" aria-label="Cerrar carrito">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="cuerpo-cajon" id="cuerpoCajonCarrito">
+            <!-- Dynamic Cart Items loaded here -->
+        </div>
+
+        <div class="pie-cajon">
+            <div class="resumen-precios-carrito">
+                <div class="linea-resumen">
+                    <span>Subtotal</span>
+                    <span id="subtotalCarrito">$0.00</span>
+                </div>
+                <div class="linea-resumen delivery">
+                    <span>Delivery (Estimado)</span>
+                    <span class="texto-dorado">Consultar</span>
+                </div>
+                <div class="linea-resumen total">
+                    <span>Total a Pagar</span>
+                    <span id="totalCarrito">$0.00</span>
+                </div>
+            </div>
+
+            <button class="btn-enviar-pedido" id="btnConfirmarWhatsApp" onclick="sendOrderToWhatsApp()" disabled>
+                <i class="fa-brands fa-whatsapp"></i> Confirmar Pedido por WhatsApp
+            </button>
+            <p class="aviso-pedido">El pedido se enviará pre-formateado a nuestro WhatsApp para coordinar el pago y la
+                entrega.</p>
+        </div>
+    </aside>
+
+    <!-- ==================== PRODUCT CUSTOMIZER MODAL ==================== -->
+    <div class="superposicion-modal" id="superposicionModalPersonalizador" onclick="closeCustomizerModal(event)">
+        <div class="tarjeta-modal" id="modalPersonalizador">
+            <button class="btn-cerrar-modal" onclick="closeCustomizerModalDirect()" aria-label="Cerrar modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="contenedor-img-heroe-modal" id="contenedorImgModal">
+                <img src="" id="imgProductoModal" alt="Product Image" class="img-heroe-modal" onclick="expandImage(this.src)">
+                <span class="insignia-categoria-modal" id="categoriaProductoModal">ARROZ FRITO</span>
+            </div>
+
+            <div class="contenido-desplazable-modal">
+                <div class="intro-producto-modal">
+                    <h3 class="titulo-producto-modal" id="tituloProductoModal">Arroz Frito Especial</h3>
+                    <p class="desc-producto-modal" id="descProductoModal">Salteado al wok con pollo, carne, camarones y
+                        cebollín.</p>
+                </div>
+
+                <form id="formularioPersonalizador" onsubmit="event.preventDefault();">
+                    <!-- Dynamic options will be rendered here -->
+                    <div id="opcionesDinamicasPersonalizador"></div>
+
+                    <!-- Special Instructions -->
+                    <div class="seccion-personalizador">
+                        <h4 class="titulo-opcion-seccion"><i class="fa-solid fa-pen texto-dorado"></i> Notas o
+                            Instrucciones
+                            Especiales</h4>
+                        <p class="subtitulo-opcion-seccion">¿Alguna alergia o preferencia particular? Escríbela aquí.
+                        </p>
+                        <textarea class="area-texto-notas-especiales" id="notasEspecialesModal"
+                            placeholder="Ej. Sin cebollín, salsa de soya extra, etc." rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="pie-modal">
+                <div class="selector-cantidad-modal">
+                    <button class="btn-cant" type="button" onclick="adjustModalQty(-1)" aria-label="Disminuir"><i
+                            class="fa-solid fa-minus"></i></button>
+                    <span class="numero-cant" id="pantallaCantModal">1</span>
+                    <button class="btn-cant" type="button" onclick="adjustModalQty(1)" aria-label="Aumentar"><i
+                            class="fa-solid fa-plus"></i></button>
+                </div>
+                <button class="btn-agregar-modal" type="button" id="btnModalAgregarCarrito"
+                    onclick="addProductFromModal()">
+                    <span>Agregar al Carrito</span>
+                    <span class="adicion-precio-modal" id="pantallaPrecioTotalModal">$0.00</span>
+                </button>
+            </div>
+</div>
+     </div>
+
+     <!-- ==================== IMAGE LIGHTBOX ==================== -->
+     <div class="superposicion-imagen" id="superposicionImagen" onclick="closeImageLightbox()">
+         <div class="contenedor-imagen-lightbox">
+             <img src="" id="imgLightbox" alt="Imagen ampliada" class="img-lightbox">
+         </div>
+     </div>
+
+     <!-- ==================== FOOTER ==================== -->
+    <footer class="pie-pagina">
+        <div class="logo-pie-pagina">
+            <span class="emoji">🥢</span> VENCHIN
+        </div>
+        <p class="etiqueta-pie-pagina">¡Sabor venezolano a la puerta de tu casa!</p>
+        <div class="divisor-pie-pagina"></div>
+        <p class="derechos-autor">&copy; <span id="anioActual">2026</span> VENCHIN. Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script src="app.js"></script>
+</body>
+
+</html>
